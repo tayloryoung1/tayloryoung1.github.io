@@ -5,8 +5,7 @@
     "Alistar",
     "Ambessa",
     "Ahri",
-    "Aatrox",
-    "Amumu"
+    "Aatrox"
   ],
   "flags": {
     "Aatrox": {
@@ -42,7 +41,7 @@
     "Amumu": {
       "tier": "",
       "difficulty": "",
-      "attempts": 2
+      "attempts": 0
     },
     "Anivia": {
       "tier": "",
