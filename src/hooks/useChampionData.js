@@ -59,22 +59,22 @@ export const useChampionData = () => {
       
       // Load and validate champion data from current dataset
       const currentDatasetData = DATASETS[currentDataset]?.data || taylorData;
-      const validatedData = validateChampionData(currentDatasetData);
-      setChampionData(validatedData);
+      let validatedData = validateChampionData(currentDatasetData);
       
-      // Try to load saved data for this dataset
+      // Try to load saved data for this dataset (overrides default data)
       const dataKey = `championData_${currentDataset}`;
       const savedData = localStorage.getItem(dataKey);
       if (savedData) {
         try {
           const parsed = JSON.parse(savedData);
-          const validatedSaved = validateChampionData(parsed);
-          setChampionData(validatedSaved);
+          validatedData = validateChampionData(parsed);
+          console.log(`Loaded saved data for ${currentDataset}`);
         } catch (err) {
           console.warn('Error loading saved data, using default:', err);
         }
       }
       
+      setChampionData(validatedData);
       setIsLoading(false);
     } catch (err) {
       console.error('Error loading champion data:', err);

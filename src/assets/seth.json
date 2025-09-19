@@ -1,42 +1,4 @@
 {
-  "selected": [
-    "Akali",
-    "Akshan",
-    "Alistar",
-    "Ambessa",
-    "Ahri",
-    "Aatrox"
-  ],
-  "flags": {
-    "Aatrox": {
-      "tier": "A",
-      "difficulty": "Challenging",
-      "attempts": 3
-    },
-    "Ahri": {
-      "tier": "C",
-      "difficulty": "Easy",
-      "attempts": 1
-    },
-    "Akali": {
-      "tier": "S",
-      "difficulty": "Very Complicated",
-      "attempts": 1
-    },
-    "Akshan": {
-      "tier": "C",
-      "difficulty": "Medium",
-      "attempts": 1
-    },
-    "Alistar": {
-      "tier": "B",
-      "difficulty": "Baby Mode",
-      "attempts": 3
-    },
-    "Ambessa": {
-      "tier": "A",
-      "difficulty": "Challenging",
-      "attempts": 2
-    }
-  }
+  "selected": [],
+  "flags": {}
 }
