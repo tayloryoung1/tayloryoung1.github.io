@@ -1,7 +1,9 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import LeagueChallengeTracker from './LeagueChallengeTracker';
 
-function App() {
+function Portfolio() {
   const handleNavClick = (e, targetId) => {
     e.preventDefault();
     const targetSection = document.querySelector(targetId);
@@ -66,6 +68,11 @@ function App() {
         <div className="container">
           <h2>Projects</h2>
           <div className="project-item">
+            <h3>League Challenge Tracker</h3>
+            <p>A Pokemon League Challenge tracking application</p>
+            <a href="/league-challenge-tracker">View Project</a>
+          </div>
+          <div className="project-item">
             <h3>Full Stack Maze API</h3>
             <p>Brief description of the project and technologies used</p>
             <a href="#">Link to project</a>
@@ -90,6 +97,17 @@ function App() {
         </div>
       </section>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/league-challenge-tracker" element={<LeagueChallengeTracker />} />
+      </Routes>
+    </Router>
   );
 }
 
