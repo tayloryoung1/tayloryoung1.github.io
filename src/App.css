@@ -269,6 +269,22 @@ h2 {
   background: #3a6a97;
 }
 
+.github-button {
+  background: #6f42c1;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+  margin-right: 10px;
+}
+
+.github-button:hover {
+  background: #5a32a3;
+}
+
 .persistence-info {
   margin-top: 10px;
   padding: 8px 12px;
@@ -625,4 +641,215 @@ h2 {
     font-size: 0.55rem;
     max-width: 55px;
   }
+}
+
+/* GitHub Settings Modal */
+.github-settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.github-settings-modal {
+  background: #1e1e3f;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.github-settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #3c3c5c;
+}
+
+.github-settings-header h3 {
+  color: #c89b3c;
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: #3c3c5c;
+}
+
+.github-settings-content {
+  padding: 20px;
+}
+
+.setting-section {
+  margin-bottom: 25px;
+}
+
+.setting-section label {
+  display: block;
+  color: #c89b3c;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.token-input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.token-input {
+  flex: 1;
+  background: #2a2a4a;
+  border: 1px solid #5c5c7c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+.token-input:focus {
+  outline: 2px solid #c89b3c;
+  outline-offset: 2px;
+}
+
+.token-status {
+  min-width: 80px;
+  font-size: 0.9rem;
+}
+
+.token-status .valid {
+  color: #2ecc71;
+}
+
+.token-status .invalid {
+  color: #e74c3c;
+}
+
+.token-status .validating {
+  color: #f39c12;
+}
+
+.token-help {
+  background: #2a2a4a;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #3498db;
+}
+
+.token-help p {
+  margin: 0 0 8px 0;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.token-help ol {
+  margin: 8px 0 0 20px;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+.token-help li {
+  margin-bottom: 4px;
+}
+
+.rate-limit-info {
+  background: #2a2a4a;
+  padding: 12px;
+  border-radius: 5px;
+  border-left: 4px solid #2ecc71;
+}
+
+.rate-limit-info h4 {
+  margin: 0 0 8px 0;
+  color: #c89b3c;
+  font-size: 0.9rem;
+}
+
+.rate-limit-info p {
+  margin: 4px 0;
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.github-settings-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  border-top: 1px solid #3c3c5c;
+}
+
+.sync-button {
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.sync-button:hover:not(:disabled) {
+  background: #27ae60;
+}
+
+.sync-button:disabled {
+  background: #5c5c7c;
+  cursor: not-allowed;
+}
+
+.save-button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.save-button:disabled {
+  background: #5c5c7c;
+  cursor: not-allowed;
+}
+
+.clear-button {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.clear-button:hover {
+  background: #c0392b;
 }

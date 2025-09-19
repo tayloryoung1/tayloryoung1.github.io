@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useChampionData } from './hooks/useChampionData';
 import SortingControls from './components/SortingControls';
 import ChampionGrid from './components/ChampionGrid';
+import GitHubSettings from './components/GitHubSettings';
 import './App.css';
 
 function LeagueChallengeTracker() {
+  const [showGitHubSettings, setShowGitHubSettings] = useState(false);
+  
   const {
     // Data
     allChampions,
@@ -101,6 +104,7 @@ function LeagueChallengeTracker() {
           datasetOptions={getDatasetOptions()}
           onExportData={exportChampionData}
           onImportData={importChampionData}
+          onOpenGitHubSettings={() => setShowGitHubSettings(true)}
         />
         
         <ChampionGrid
@@ -113,6 +117,14 @@ function LeagueChallengeTracker() {
           onMoveChampion={moveChampionToSection}
           supportsDragDrop={supportsDragDrop}
         />
+        
+        {showGitHubSettings && (
+          <GitHubSettings
+            onClose={() => setShowGitHubSettings(false)}
+            currentDataset={currentDataset}
+            championData={championData}
+          />
+        )}
       </main>
     </div>
   );

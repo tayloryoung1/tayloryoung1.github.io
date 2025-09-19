@@ -16,7 +16,8 @@ const SortingControls = ({
   onDatasetChange,
   datasetOptions,
   onExportData,
-  onImportData
+  onImportData,
+  onOpenGitHubSettings
 }) => {
   const fileInputRef = useRef(null);
 
@@ -94,6 +95,14 @@ const SortingControls = ({
               <span>Drag & drop enabled</span>
             </div>
           )}
+          
+          <button
+            onClick={onOpenGitHubSettings}
+            className="github-button"
+            title="GitHub Integration Settings"
+          >
+            🔗 GitHub
+          </button>
           
           <button
             onClick={onExportData}
