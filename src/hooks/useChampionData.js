@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   getAllChampionNames,
   sortChampionsAlphabetically,
@@ -46,6 +46,20 @@ export const useChampionData = () => {
   
   // Error state
   const [error, setError] = useState(null);
+
+  // Ref for debouncing auto-sync
+  const autoSyncTimeoutRef = useRef(null);
+
+  /**
+   * Clean up timeouts on unmount
+   */
+  useEffect(() => {
+    return () => {
+      if (autoSyncTimeoutRef.current) {
+        clearTimeout(autoSyncTimeoutRef.current);
+      }
+    };
+  }, []);
 
   /**
    * Load initial champion data
@@ -139,7 +153,7 @@ export const useChampionData = () => {
       
       return newData;
     });
-  }, []);
+  }, [saveChampionData]);
 
   /**
    * Update champion flag
@@ -161,7 +175,7 @@ export const useChampionData = () => {
       
       return newData;
     });
-  }, []);
+  }, [saveChampionData]);
 
   /**
    * Move champion to different section (for drag & drop)
@@ -197,24 +211,43 @@ export const useChampionData = () => {
       // Always save to localStorage first
       const dataKey = `championData_${currentDataset}`;
       localStorage.setItem(dataKey, JSON.stringify(data));
+      console.log(`💾 Saved data locally for ${currentDataset}`);
       
       // Check if auto-sync is enabled
       const githubToken = localStorage.getItem('githubToken');
       const autoSync = localStorage.getItem('githubAutoSync') === 'true';
       
+      console.log(`🔍 Auto-sync check: token=${!!githubToken}, autoSync=${autoSync}`);
+      
       if (autoSync && githubToken) {
-        try {
-          const filename = `${currentDataset.charAt(0).toUpperCase() + currentDataset.slice(1)}.json`;
-          await saveToGitHub(filename, data, githubToken);
-          
-          // Update last sync time
-          const now = new Date().toISOString();
-          localStorage.setItem('githubLastSync', now);
-          
-          console.log('✅ Auto-synced to GitHub');
-        } catch (error) {
-          console.error('❌ Auto-sync failed:', error.message);
-          // Don't show error to user for auto-sync failures, just log them
+        // Clear previous timeout to debounce rapid changes
+        if (autoSyncTimeoutRef.current) {
+          clearTimeout(autoSyncTimeoutRef.current);
+        }
+        
+        // Debounce auto-sync by 1 second to avoid excessive API calls
+        autoSyncTimeoutRef.current = setTimeout(async () => {
+          try {
+            const filename = `${currentDataset.charAt(0).toUpperCase() + currentDataset.slice(1)}.json`;
+            console.log(`🔄 Starting auto-sync of ${filename} to GitHub...`);
+            
+            await saveToGitHub(filename, data, githubToken);
+            
+            // Update last sync time
+            const now = new Date().toISOString();
+            localStorage.setItem('githubLastSync', now);
+            
+            console.log('✅ Auto-synced to GitHub successfully');
+          } catch (error) {
+            console.error('❌ Auto-sync failed:', error.message);
+            // Don't show error to user for auto-sync failures, just log them
+          }
+        }, 1000);
+      } else {
+        if (!githubToken) {
+          console.log('ℹ️ No GitHub token found - skipping auto-sync');
+        } else {
+          console.log('ℹ️ Auto-sync disabled - skipping GitHub sync');
         }
       }
     } catch (err) {

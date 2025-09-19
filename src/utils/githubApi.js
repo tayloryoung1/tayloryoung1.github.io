@@ -20,6 +20,8 @@ export const saveToGitHub = async (filename, data, token) => {
     const content = JSON.stringify(data, null, 2);
     const encodedContent = btoa(unescape(encodeURIComponent(content)));
     
+    console.log(`🔄 GitHub API: Saving ${filename} to ${path}`);
+    
     // Get current file SHA (required for updates)
     const getFileResponse = await fetch(
       `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${path}`,
@@ -35,6 +37,11 @@ export const saveToGitHub = async (filename, data, token) => {
     if (getFileResponse.ok) {
       const fileData = await getFileResponse.json();
       sha = fileData.sha;
+      console.log(`📄 Found existing file with SHA: ${sha.substring(0, 8)}...`);
+    } else if (getFileResponse.status === 404) {
+      console.log(`📄 File ${filename} does not exist yet, will create new file`);
+    } else {
+      throw new Error(`Failed to get file info: ${getFileResponse.status} ${getFileResponse.statusText}`);
     }
     
     // Update or create file
@@ -57,10 +64,13 @@ export const saveToGitHub = async (filename, data, token) => {
     );
     
     if (!updateResponse.ok) {
-      throw new Error(`GitHub API error: ${updateResponse.status}`);
+      const errorText = await updateResponse.text();
+      throw new Error(`GitHub API error: ${updateResponse.status} ${updateResponse.statusText} - ${errorText}`);
     }
     
-    return await updateResponse.json();
+    const result = await updateResponse.json();
+    console.log(`✅ Successfully saved ${filename} to GitHub`);
+    return result;
   } catch (error) {
     console.error('Error saving to GitHub:', error);
     throw error;

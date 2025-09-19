@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * Sorting controls component
@@ -17,6 +17,33 @@ const SortingControls = ({
   datasetOptions,
   onOpenGitHubSettings
 }) => {
+  const [autoSyncStatus, setAutoSyncStatus] = useState({
+    enabled: false,
+    hasToken: false,
+    lastSync: null
+  });
+
+  // Check auto-sync status
+  useEffect(() => {
+    const checkAutoSyncStatus = () => {
+      const githubToken = localStorage.getItem('githubToken');
+      const autoSync = localStorage.getItem('githubAutoSync') === 'true';
+      const lastSync = localStorage.getItem('githubLastSync');
+      
+      setAutoSyncStatus({
+        enabled: autoSync,
+        hasToken: !!githubToken,
+        lastSync: lastSync
+      });
+    };
+
+    checkAutoSyncStatus();
+    
+    // Check periodically for changes
+    const interval = setInterval(checkAutoSyncStatus, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="sorting-controls">
       <div className="sorting-controls-header">
@@ -92,6 +119,22 @@ const SortingControls = ({
           </button>
         </div>
       </div>
+
+      {/* Auto-sync status indicator */}
+      {autoSyncStatus.hasToken && (
+        <div className="persistence-info">
+          {autoSyncStatus.enabled ? (
+            <>
+              <span>🔄 Auto-sync enabled</span>
+              {autoSyncStatus.lastSync && (
+                <span> - Last sync: {new Date(autoSyncStatus.lastSync).toLocaleTimeString()}</span>
+              )}
+            </>
+          ) : (
+            <span>⏸️ Auto-sync disabled (changes saved locally only)</span>
+          )}
+        </div>
+      )}
 
       <div className="legend">
         <div className="legend-section">
