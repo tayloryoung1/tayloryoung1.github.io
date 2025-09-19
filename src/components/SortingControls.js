@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 /**
  * Sorting controls component
@@ -14,8 +14,29 @@ const SortingControls = ({
   totalCount,
   currentDataset,
   onDatasetChange,
-  datasetOptions
+  datasetOptions,
+  onExportData,
+  onImportData
 }) => {
+  const fileInputRef = useRef(null);
+
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      try {
+        await onImportData(file);
+        alert('Data imported successfully!');
+      } catch (error) {
+        alert(`Import failed: ${error.message}`);
+      }
+      // Reset the file input
+      event.target.value = '';
+    }
+  };
   return (
     <div className="sorting-controls">
       <div className="sorting-controls-header">
@@ -75,11 +96,35 @@ const SortingControls = ({
           )}
           
           <button
+            onClick={onExportData}
+            className="export-button"
+            title="Download current champion data as JSON file"
+          >
+            📥 Export
+          </button>
+          
+          <button
+            onClick={handleImportClick}
+            className="import-button"
+            title="Import champion data from JSON file"
+          >
+            📤 Import
+          </button>
+          
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".json"
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+          />
+          
+          <button
             onClick={onResetData}
             className="reset-button"
             title="Reset all champion data"
           >
-            Reset All
+            🔄 Reset
           </button>
         </div>
       </div>
@@ -111,6 +156,11 @@ const SortingControls = ({
             {supportsDragDrop && ' Drag champions between attempt groups to update their attempt count.'}
           </div>
         )}
+        
+        <div className="persistence-info">
+          💾 <strong>Data Persistence:</strong> Changes are saved locally in your browser. 
+          Use <strong>Export</strong> to download your data as a file, and <strong>Import</strong> to restore it later or share with others.
+        </div>
       </div>
 
       <div className="legend">

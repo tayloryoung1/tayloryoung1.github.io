@@ -8,12 +8,12 @@ import {
   updateChampionFlag,
   validateChampionData
 } from '../utils/championUtils';
-import selectedChampionsData from '../assets/selected_champions.json';
-import sethData from '../assets/seth.json';
+import taylorData from '../assets/Taylor.json';
+import sethData from '../assets/Seth.json';
 
 // Available datasets
 const DATASETS = {
-  'selected_champions': { data: selectedChampionsData, label: 'Selected Champions' },
+  'taylor': { data: taylorData, label: 'Taylor' },
   'seth': { data: sethData, label: 'Seth' }
 };
 
@@ -35,7 +35,7 @@ export const useChampionData = () => {
   const [sortingMethod, setSortingMethod] = useState('alphabetical');
   
   // State for current dataset
-  const [currentDataset, setCurrentDataset] = useState('selected_champions');
+  const [currentDataset, setCurrentDataset] = useState('taylor');
   
   // State for sorted and grouped champions
   const [sortedChampions, setSortedChampions] = useState({});
@@ -58,9 +58,22 @@ export const useChampionData = () => {
       setAllChampions(champions);
       
       // Load and validate champion data from current dataset
-      const currentDatasetData = DATASETS[currentDataset]?.data || selectedChampionsData;
+      const currentDatasetData = DATASETS[currentDataset]?.data || taylorData;
       const validatedData = validateChampionData(currentDatasetData);
       setChampionData(validatedData);
+      
+      // Try to load saved data for this dataset
+      const dataKey = `championData_${currentDataset}`;
+      const savedData = localStorage.getItem(dataKey);
+      if (savedData) {
+        try {
+          const parsed = JSON.parse(savedData);
+          const validatedSaved = validateChampionData(parsed);
+          setChampionData(validatedSaved);
+        } catch (err) {
+          console.warn('Error loading saved data, using default:', err);
+        }
+      }
       
       setIsLoading(false);
     } catch (err) {
@@ -176,23 +189,25 @@ export const useChampionData = () => {
 
   /**
    * Save champion data (in a real app, this would make an API call)
-   * For now, we'll just save to localStorage
+   * For GitHub Pages, we save to localStorage and provide export functionality
    * @param {Object} data - Champion data to save
    */
   const saveChampionData = useCallback((data) => {
     try {
-      localStorage.setItem('championData', JSON.stringify(data));
+      const dataKey = `championData_${currentDataset}`;
+      localStorage.setItem(dataKey, JSON.stringify(data));
     } catch (err) {
       console.error('Error saving champion data:', err);
     }
-  }, []);
+  }, [currentDataset]);
 
   /**
    * Load champion data from localStorage if available
    */
   const loadSavedData = useCallback(() => {
     try {
-      const savedData = localStorage.getItem('championData');
+      const dataKey = `championData_${currentDataset}`;
+      const savedData = localStorage.getItem(dataKey);
       if (savedData) {
         const parsed = JSON.parse(savedData);
         const validated = validateChampionData(parsed);
@@ -201,7 +216,53 @@ export const useChampionData = () => {
     } catch (err) {
       console.error('Error loading saved data:', err);
     }
-  }, []);
+  }, [currentDataset]);
+
+  /**
+   * Export current champion data as JSON file
+   */
+  const exportChampionData = useCallback(() => {
+    try {
+      const dataToExport = JSON.stringify(championData, null, 2);
+      const blob = new Blob([dataToExport], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${currentDataset}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Error exporting champion data:', err);
+    }
+  }, [championData, currentDataset]);
+
+  /**
+   * Import champion data from JSON file
+   */
+  const importChampionData = useCallback((file) => {
+    return new Promise((resolve, reject) => {
+      try {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const importedData = JSON.parse(e.target.result);
+            const validated = validateChampionData(importedData);
+            setChampionData(validated);
+            saveChampionData(validated);
+            resolve(validated);
+          } catch (parseErr) {
+            reject(new Error('Invalid JSON file format'));
+          }
+        };
+        reader.onerror = () => reject(new Error('Failed to read file'));
+        reader.readAsText(file);
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }, [saveChampionData]);
 
   /**
    * Reset all champion data to defaults
@@ -212,8 +273,9 @@ export const useChampionData = () => {
       flags: {}
     };
     setChampionData(defaultData);
-    localStorage.removeItem('championData');
-  }, []);
+    const dataKey = `championData_${currentDataset}`;
+    localStorage.removeItem(dataKey);
+  }, [currentDataset]);
 
   /**
    * Get champion status
@@ -276,6 +338,8 @@ export const useChampionData = () => {
     resetChampionData,
     getChampionStatus,
     getSortingOptions,
-    getDatasetOptions
+    getDatasetOptions,
+    exportChampionData,
+    importChampionData
   };
 };

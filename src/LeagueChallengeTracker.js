@@ -28,7 +28,9 @@ function LeagueChallengeTracker() {
     resetChampionData,
     getChampionStatus,
     getSortingOptions,
-    getDatasetOptions
+    getDatasetOptions,
+    exportChampionData,
+    importChampionData
   } = useChampionData();
 
   /**
@@ -97,6 +99,8 @@ function LeagueChallengeTracker() {
           currentDataset={currentDataset}
           onDatasetChange={setCurrentDataset}
           datasetOptions={getDatasetOptions()}
+          onExportData={exportChampionData}
+          onImportData={importChampionData}
         />
         
         <ChampionGrid
