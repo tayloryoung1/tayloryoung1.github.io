@@ -82,7 +82,7 @@ const GitHubSettings = ({ onClose, currentDataset, championData }) => {
   };
 
   const clearSettings = () => {
-    if (confirm('Clear all GitHub settings?')) {
+    if (window.confirm('Clear all GitHub settings?')) {
       localStorage.removeItem('githubToken');
       localStorage.removeItem('githubAutoSync');
       localStorage.removeItem('githubLastSync');
