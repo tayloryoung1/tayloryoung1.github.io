@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import LeagueChallengeTracker from './LeagueChallengeTracker';
 
@@ -70,7 +70,7 @@ function Portfolio() {
           <div className="project-item">
             <h3>League Challenge Tracker</h3>
             <p>A Pokemon League Challenge tracking application</p>
-            <a href="/league-challenge-tracker">View Project</a>
+            <Link to="/league-challenge-tracker">View Project</Link>
           </div>
           <div className="project-item">
             <h3>Full Stack Maze API</h3>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 function LeagueChallengeTracker() {
@@ -6,7 +7,7 @@ function LeagueChallengeTracker() {
     <div className="App">
       <nav>
         <ul>
-          <li><a href="/">Back to Portfolio</a></li>
+          <li><Link to="/">Back to Portfolio</Link></li>
         </ul>
       </nav>
       
