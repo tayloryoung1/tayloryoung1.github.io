@@ -31,9 +31,7 @@ function LeagueChallengeTracker() {
     resetChampionData,
     getChampionStatus,
     getSortingOptions,
-    getDatasetOptions,
-    exportChampionData,
-    importChampionData
+    getDatasetOptions
   } = useChampionData();
 
   /**
@@ -102,8 +100,6 @@ function LeagueChallengeTracker() {
           currentDataset={currentDataset}
           onDatasetChange={setCurrentDataset}
           datasetOptions={getDatasetOptions()}
-          onExportData={exportChampionData}
-          onImportData={importChampionData}
           onOpenGitHubSettings={() => setShowGitHubSettings(true)}
         />
         

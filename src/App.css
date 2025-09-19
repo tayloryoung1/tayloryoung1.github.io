@@ -253,22 +253,6 @@ h2 {
   background: #a0522d;
 }
 
-.export-button, .import-button {
-  background: #2d5a87;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-  margin-right: 10px;
-}
-
-.export-button:hover, .import-button:hover {
-  background: #3a6a97;
-}
-
 .github-button {
   background: #6f42c1;
   color: #fff;

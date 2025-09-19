@@ -219,52 +219,6 @@ export const useChampionData = () => {
   }, [currentDataset]);
 
   /**
-   * Export current champion data as JSON file
-   */
-  const exportChampionData = useCallback(() => {
-    try {
-      const dataToExport = JSON.stringify(championData, null, 2);
-      const blob = new Blob([dataToExport], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `${currentDataset}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error('Error exporting champion data:', err);
-    }
-  }, [championData, currentDataset]);
-
-  /**
-   * Import champion data from JSON file
-   */
-  const importChampionData = useCallback((file) => {
-    return new Promise((resolve, reject) => {
-      try {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          try {
-            const importedData = JSON.parse(e.target.result);
-            const validated = validateChampionData(importedData);
-            setChampionData(validated);
-            saveChampionData(validated);
-            resolve(validated);
-          } catch (parseErr) {
-            reject(new Error('Invalid JSON file format'));
-          }
-        };
-        reader.onerror = () => reject(new Error('Failed to read file'));
-        reader.readAsText(file);
-      } catch (err) {
-        reject(err);
-      }
-    });
-  }, [saveChampionData]);
-
-  /**
    * Reset all champion data to defaults
    */
   const resetChampionData = useCallback(() => {
@@ -338,8 +292,6 @@ export const useChampionData = () => {
     resetChampionData,
     getChampionStatus,
     getSortingOptions,
-    getDatasetOptions,
-    exportChampionData,
-    importChampionData
+    getDatasetOptions
   };
 };

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 /**
  * Sorting controls component
@@ -15,29 +15,8 @@ const SortingControls = ({
   currentDataset,
   onDatasetChange,
   datasetOptions,
-  onExportData,
-  onImportData,
   onOpenGitHubSettings
 }) => {
-  const fileInputRef = useRef(null);
-
-  const handleImportClick = () => {
-    fileInputRef.current?.click();
-  };
-
-  const handleFileChange = async (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      try {
-        await onImportData(file);
-        alert('Data imported successfully!');
-      } catch (error) {
-        alert(`Import failed: ${error.message}`);
-      }
-      // Reset the file input
-      event.target.value = '';
-    }
-  };
   return (
     <div className="sorting-controls">
       <div className="sorting-controls-header">
@@ -103,30 +82,6 @@ const SortingControls = ({
           >
             🔗 GitHub
           </button>
-          
-          <button
-            onClick={onExportData}
-            className="export-button"
-            title="Download current champion data as JSON file"
-          >
-            📥 Export
-          </button>
-          
-          <button
-            onClick={handleImportClick}
-            className="import-button"
-            title="Import champion data from JSON file"
-          >
-            📤 Import
-          </button>
-          
-          <input
-            ref={fileInputRef}
-            type="file"
-            accept=".json"
-            onChange={handleFileChange}
-            style={{ display: 'none' }}
-          />
           
           <button
             onClick={onResetData}
