@@ -2,7 +2,7 @@ import React from 'react';
 
 /**
  * Sorting controls component
- * Provides UI for selecting different sorting methods
+ * Provides UI for selecting different sorting methods and datasets
  */
 const SortingControls = ({
   currentSortingMethod,
@@ -11,14 +11,25 @@ const SortingControls = ({
   supportsDragDrop,
   onResetData,
   selectedCount,
-  totalCount
+  totalCount,
+  currentDataset,
+  onDatasetChange,
+  datasetOptions
 }) => {
   return (
     <div className="sorting-controls">
       <div className="sorting-controls-header">
         <h2>League Challenge Tracker</h2>
-        <div className="champion-count">
-          {selectedCount} of {totalCount} champions selected
+        <div className="champion-progress">
+          <div className="champion-count">
+            {selectedCount} of {totalCount} champions selected
+          </div>
+          <div className="progress-bar">
+            <div 
+              className="progress-fill" 
+              style={{ width: `${(selectedCount / totalCount) * 100}%` }}
+            ></div>
+          </div>
         </div>
       </div>
 
@@ -32,6 +43,22 @@ const SortingControls = ({
             className="sorting-dropdown"
           >
             {sortingOptions.map(option => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="dataset-selection">
+          <label htmlFor="dataset">Dataset:</label>
+          <select
+            id="dataset"
+            value={currentDataset}
+            onChange={(e) => onDatasetChange(e.target.value)}
+            className="sorting-dropdown"
+          >
+            {datasetOptions.map(option => (
               <option key={option.value} value={option.value}>
                 {option.label}
               </option>

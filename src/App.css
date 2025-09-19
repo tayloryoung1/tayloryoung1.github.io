@@ -150,6 +150,30 @@ h2 {
   padding: 8px 15px;
   border-radius: 5px;
   font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.champion-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 200px;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 8px;
+  background: #3c3c5c;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #5c5c7c;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c89b3c, #f7931e);
+  transition: width 0.3s ease;
+  border-radius: 3px;
 }
 
 .sorting-controls-main {
@@ -167,7 +191,14 @@ h2 {
   gap: 10px;
 }
 
-.sorting-method-selection label {
+.dataset-selection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sorting-method-selection label,
+.dataset-selection label {
   font-weight: bold;
   color: #c89b3c;
 }

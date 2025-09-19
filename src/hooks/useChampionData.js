@@ -9,6 +9,13 @@ import {
   validateChampionData
 } from '../utils/championUtils';
 import selectedChampionsData from '../assets/selected_champions.json';
+import sethData from '../assets/seth.json';
+
+// Available datasets
+const DATASETS = {
+  'selected_champions': { data: selectedChampionsData, label: 'Selected Champions' },
+  'seth': { data: sethData, label: 'Seth' }
+};
 
 /**
  * Custom hook for managing champion data and state
@@ -26,6 +33,9 @@ export const useChampionData = () => {
   
   // State for current sorting method
   const [sortingMethod, setSortingMethod] = useState('alphabetical');
+  
+  // State for current dataset
+  const [currentDataset, setCurrentDataset] = useState('selected_champions');
   
   // State for sorted and grouped champions
   const [sortedChampions, setSortedChampions] = useState({});
@@ -47,8 +57,9 @@ export const useChampionData = () => {
       const champions = getAllChampionNames();
       setAllChampions(champions);
       
-      // Load and validate champion data
-      const validatedData = validateChampionData(selectedChampionsData);
+      // Load and validate champion data from current dataset
+      const currentDatasetData = DATASETS[currentDataset]?.data || selectedChampionsData;
+      const validatedData = validateChampionData(currentDatasetData);
       setChampionData(validatedData);
       
       setIsLoading(false);
@@ -57,7 +68,7 @@ export const useChampionData = () => {
       setError('Failed to load champion data');
       setIsLoading(false);
     }
-  }, []);
+  }, [currentDataset]);
 
   /**
    * Update sorted champions when data or sorting method changes
@@ -230,6 +241,14 @@ export const useChampionData = () => {
   ];
 
   /**
+   * Get dataset options
+   */
+  const getDatasetOptions = () => Object.keys(DATASETS).map(key => ({
+    value: key,
+    label: DATASETS[key].label
+  }));
+
+  /**
    * Check if current sorting method supports drag & drop
    */
   const supportsDragDrop = sortingMethod !== 'alphabetical';
@@ -240,6 +259,7 @@ export const useChampionData = () => {
     championData,
     sortedChampions,
     sortingMethod,
+    currentDataset,
     
     // State
     isLoading,
@@ -251,9 +271,11 @@ export const useChampionData = () => {
     updateFlag,
     moveChampionToSection,
     setSortingMethod,
+    setCurrentDataset,
     loadSavedData,
     resetChampionData,
     getChampionStatus,
-    getSortingOptions
+    getSortingOptions,
+    getDatasetOptions
   };
 };

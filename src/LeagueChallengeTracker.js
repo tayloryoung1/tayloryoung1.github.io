@@ -12,6 +12,7 @@ function LeagueChallengeTracker() {
     championData,
     sortedChampions,
     sortingMethod,
+    currentDataset,
     
     // State
     isLoading,
@@ -23,9 +24,11 @@ function LeagueChallengeTracker() {
     updateFlag,
     moveChampionToSection,
     setSortingMethod,
+    setCurrentDataset,
     resetChampionData,
     getChampionStatus,
-    getSortingOptions
+    getSortingOptions,
+    getDatasetOptions
   } = useChampionData();
 
   /**
@@ -91,6 +94,9 @@ function LeagueChallengeTracker() {
           onResetData={handleResetData}
           selectedCount={championData.selected.length}
           totalCount={allChampions.length}
+          currentDataset={currentDataset}
+          onDatasetChange={setCurrentDataset}
+          datasetOptions={getDatasetOptions()}
         />
         
         <ChampionGrid

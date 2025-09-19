@@ -114,7 +114,10 @@ const ChampionGrid = ({
    * Render a section of champions
    */
   const renderSection = (sectionName, champions) => {
-    if (!champions || champions.length === 0) {
+    // For tier sorting, always show sections even if empty
+    const shouldShow = sortingMethod === 'tier' || (champions && champions.length > 0);
+    
+    if (!shouldShow) {
       return null;
     }
 
@@ -128,11 +131,11 @@ const ChampionGrid = ({
       >
         <div className="section-header">
           <h3 className="section-title">{getSectionDisplayName(sectionName)}</h3>
-          <span className="section-count">({champions.length})</span>
+          <span className="section-count">({champions ? champions.length : 0})</span>
         </div>
         
         <div className="champions-grid">
-          {champions.map(championName => {
+          {champions && champions.map(championName => {
             const status = getChampionStatus(championName);
             
             return (
@@ -154,12 +157,6 @@ const ChampionGrid = ({
             );
           })}
         </div>
-        
-        {supportsDragDrop && (
-          <div className="drop-zone">
-            Drop champions here to move them to {getSectionDisplayName(sectionName)}
-          </div>
-        )}
       </div>
     );
   };
@@ -194,15 +191,15 @@ const ChampionGrid = ({
     }
     
     if (sortingMethod === 'attempts') {
-      // Sort by attempt count
+      // Sort by attempt count (descending order)
       return sections
         .sort((a, b) => {
-          if (a === 'No Attempts') return -1;
-          if (b === 'No Attempts') return 1;
+          if (a === 'No Attempts') return 1; // Put 'No Attempts' at the end
+          if (b === 'No Attempts') return -1;
           
           const aNum = parseInt(a.split(' ')[0]) || 0;
           const bNum = parseInt(b.split(' ')[0]) || 0;
-          return aNum - bNum;
+          return bNum - aNum; // Descending order (highest first)
         })
         .map(attempts => renderSection(attempts, sortedChampions[attempts]));
     }

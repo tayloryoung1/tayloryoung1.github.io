@@ -2,7 +2,16 @@
 
 /**
  * Get all champion names from the assets folder
- * @returns {Array} Array of champion names extracted from filenames
+ * @retu  // Sort the groups by attempt count (descending order)
+  const sortedGrouped = {};
+  const sortedKeys = Object.keys(grouped).sort((a, b) => {
+    if (a === 'No Attempts') return 1; // Put 'No Attempts' at the end
+    if (b === 'No Attempts') return -1;
+    
+    const aNum = parseInt(a.split(' ')[0]);
+    const bNum = parseInt(b.split(' ')[0]);
+    return bNum - aNum; // Descending order (highest first)
+  });} Array of champion names extracted from filenames
  */
 export const getAllChampionNames = () => {
   // Since we can't dynamically import from file system in React,
@@ -48,14 +57,19 @@ export const sortChampionsByTier = (champions, flags) => {
   const tierOrder = ['S', 'A', 'B', 'C', 'D', 'F', 'None'];
   const grouped = {};
   
-  // Initialize all tier groups
+  // Initialize all tier groups (including empty ones)
   tierOrder.forEach(tier => {
     grouped[tier] = [];
   });
   
   champions.forEach(champion => {
     const tier = flags[champion]?.tier || 'None';
-    grouped[tier].push(champion);
+    if (grouped[tier]) {
+      grouped[tier].push(champion);
+    } else {
+      // If tier doesn't exist in our order, add to None
+      grouped['None'].push(champion);
+    }
   });
   
   // Sort champions within each tier alphabetically
