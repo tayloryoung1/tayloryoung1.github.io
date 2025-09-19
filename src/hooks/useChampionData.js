@@ -8,6 +8,7 @@ import {
   updateChampionFlag,
   validateChampionData
 } from '../utils/championUtils';
+import { saveToGitHub } from '../utils/githubApi';
 import taylorData from '../assets/Taylor.json';
 import sethData from '../assets/Seth.json';
 
@@ -188,14 +189,34 @@ export const useChampionData = () => {
   }, [updateFlag]);
 
   /**
-   * Save champion data (in a real app, this would make an API call)
-   * For GitHub Pages, we save to localStorage and provide export functionality
+   * Save champion data to localStorage and optionally auto-sync to GitHub
    * @param {Object} data - Champion data to save
    */
-  const saveChampionData = useCallback((data) => {
+  const saveChampionData = useCallback(async (data) => {
     try {
+      // Always save to localStorage first
       const dataKey = `championData_${currentDataset}`;
       localStorage.setItem(dataKey, JSON.stringify(data));
+      
+      // Check if auto-sync is enabled
+      const githubToken = localStorage.getItem('githubToken');
+      const autoSync = localStorage.getItem('githubAutoSync') === 'true';
+      
+      if (autoSync && githubToken) {
+        try {
+          const filename = `${currentDataset.charAt(0).toUpperCase() + currentDataset.slice(1)}.json`;
+          await saveToGitHub(filename, data, githubToken);
+          
+          // Update last sync time
+          const now = new Date().toISOString();
+          localStorage.setItem('githubLastSync', now);
+          
+          console.log('✅ Auto-synced to GitHub');
+        } catch (error) {
+          console.error('❌ Auto-sync failed:', error.message);
+          // Don't show error to user for auto-sync failures, just log them
+        }
+      }
     } catch (err) {
       console.error('Error saving champion data:', err);
     }
