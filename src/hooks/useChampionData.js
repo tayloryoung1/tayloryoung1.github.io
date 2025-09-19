@@ -127,6 +127,65 @@ export const useChampionData = () => {
   }, [allChampions, championData.flags, sortingMethod]);
 
   /**
+   * Auto-save and sync champion data when it changes
+   */
+  useEffect(() => {
+    // Skip auto-save during initial load
+    if (isLoading) return;
+    
+    const saveData = async () => {
+      try {
+        // Always save to localStorage first
+        const dataKey = `championData_${currentDataset}`;
+        localStorage.setItem(dataKey, JSON.stringify(championData));
+        console.log(`💾 Saved data locally for ${currentDataset}`);
+        
+        // Check if auto-sync is enabled
+        const githubToken = localStorage.getItem('githubToken');
+        const autoSync = localStorage.getItem('githubAutoSync') === 'true';
+        
+        console.log(`🔍 Auto-sync check: token=${!!githubToken}, autoSync=${autoSync}`);
+        
+        if (autoSync && githubToken) {
+          // Clear previous timeout to debounce rapid changes
+          if (autoSyncTimeoutRef.current) {
+            clearTimeout(autoSyncTimeoutRef.current);
+          }
+          
+          // Debounce auto-sync by 1 second to avoid excessive API calls
+          autoSyncTimeoutRef.current = setTimeout(async () => {
+            try {
+              const filename = `${currentDataset.charAt(0).toUpperCase() + currentDataset.slice(1)}.json`;
+              console.log(`🔄 Starting auto-sync of ${filename} to GitHub...`);
+              
+              await saveToGitHub(filename, championData, githubToken);
+              
+              // Update last sync time
+              const now = new Date().toISOString();
+              localStorage.setItem('githubLastSync', now);
+              
+              console.log('✅ Auto-synced to GitHub successfully');
+            } catch (error) {
+              console.error('❌ Auto-sync failed:', error.message);
+              // Don't show error to user for auto-sync failures, just log them
+            }
+          }, 1000);
+        } else {
+          if (!githubToken) {
+            console.log('ℹ️ No GitHub token found - skipping auto-sync');
+          } else {
+            console.log('ℹ️ Auto-sync disabled - skipping GitHub sync');
+          }
+        }
+      } catch (err) {
+        console.error('Error saving champion data:', err);
+      }
+    };
+
+    saveData();
+  }, [championData, currentDataset, isLoading]);
+
+  /**
    * Toggle champion selection
    * @param {string} championName - Name of the champion to toggle
    */
@@ -148,12 +207,10 @@ export const useChampionData = () => {
         selected: newSelected
       };
       
-      // Save to localStorage (in a real app, this would be an API call)
-      saveChampionData(newData);
-      
+      // Save to localStorage and auto-sync - done in useEffect
       return newData;
     });
-  }, [saveChampionData]);
+  }, []);
 
   /**
    * Update champion flag
@@ -170,12 +227,10 @@ export const useChampionData = () => {
         flags: newFlags
       };
       
-      // Save to localStorage
-      saveChampionData(newData);
-      
+      // Save to localStorage and auto-sync - done in useEffect
       return newData;
     });
-  }, [saveChampionData]);
+  }, []);
 
   /**
    * Move champion to different section (for drag & drop)
@@ -201,59 +256,6 @@ export const useChampionData = () => {
     
     updateFlag(championName, flagType, value);
   }, [updateFlag]);
-
-  /**
-   * Save champion data to localStorage and optionally auto-sync to GitHub
-   * @param {Object} data - Champion data to save
-   */
-  const saveChampionData = useCallback(async (data) => {
-    try {
-      // Always save to localStorage first
-      const dataKey = `championData_${currentDataset}`;
-      localStorage.setItem(dataKey, JSON.stringify(data));
-      console.log(`💾 Saved data locally for ${currentDataset}`);
-      
-      // Check if auto-sync is enabled
-      const githubToken = localStorage.getItem('githubToken');
-      const autoSync = localStorage.getItem('githubAutoSync') === 'true';
-      
-      console.log(`🔍 Auto-sync check: token=${!!githubToken}, autoSync=${autoSync}`);
-      
-      if (autoSync && githubToken) {
-        // Clear previous timeout to debounce rapid changes
-        if (autoSyncTimeoutRef.current) {
-          clearTimeout(autoSyncTimeoutRef.current);
-        }
-        
-        // Debounce auto-sync by 1 second to avoid excessive API calls
-        autoSyncTimeoutRef.current = setTimeout(async () => {
-          try {
-            const filename = `${currentDataset.charAt(0).toUpperCase() + currentDataset.slice(1)}.json`;
-            console.log(`🔄 Starting auto-sync of ${filename} to GitHub...`);
-            
-            await saveToGitHub(filename, data, githubToken);
-            
-            // Update last sync time
-            const now = new Date().toISOString();
-            localStorage.setItem('githubLastSync', now);
-            
-            console.log('✅ Auto-synced to GitHub successfully');
-          } catch (error) {
-            console.error('❌ Auto-sync failed:', error.message);
-            // Don't show error to user for auto-sync failures, just log them
-          }
-        }, 1000);
-      } else {
-        if (!githubToken) {
-          console.log('ℹ️ No GitHub token found - skipping auto-sync');
-        } else {
-          console.log('ℹ️ Auto-sync disabled - skipping GitHub sync');
-        }
-      }
-    } catch (err) {
-      console.error('Error saving champion data:', err);
-    }
-  }, [currentDataset]);
 
   /**
    * Load champion data from localStorage if available

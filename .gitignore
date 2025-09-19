@@ -11,6 +11,10 @@
 # production
 /build
 
+# champion data files (auto-updated via GitHub API)
+src/assets/Taylor.json
+src/assets/Seth.json
+
 # misc
 .DS_Store
 .env.local
