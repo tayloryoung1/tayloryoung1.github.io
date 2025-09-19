@@ -129,40 +129,6 @@ const SortingControls = ({
         </div>
       </div>
 
-      <div className="sorting-controls-info">
-        {currentSortingMethod === 'alphabetical' && (
-          <div className="sorting-info">
-            Champions are grouped by first letter and sorted alphabetically.
-          </div>
-        )}
-        
-        {currentSortingMethod === 'tier' && (
-          <div className="sorting-info">
-            Champions are grouped by tier (S, A, B, C, D, F, None). 
-            {supportsDragDrop && ' Drag champions between tiers to update their tier.'}
-          </div>
-        )}
-        
-        {currentSortingMethod === 'difficulty' && (
-          <div className="sorting-info">
-            Champions are grouped by difficulty level. 
-            {supportsDragDrop && ' Drag champions between difficulty levels to update their difficulty.'}
-          </div>
-        )}
-        
-        {currentSortingMethod === 'attempts' && (
-          <div className="sorting-info">
-            Champions are grouped by number of attempts. 
-            {supportsDragDrop && ' Drag champions between attempt groups to update their attempt count.'}
-          </div>
-        )}
-        
-        <div className="persistence-info">
-          💾 <strong>Data Persistence:</strong> Changes are saved locally in your browser. 
-          Use <strong>Export</strong> to download your data as a file, and <strong>Import</strong> to restore it later or share with others.
-        </div>
-      </div>
-
       <div className="legend">
         <div className="legend-section">
           <h4>Tier Colors:</h4>
