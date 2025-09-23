@@ -1,20 +1,4 @@
 {
   "selected": [],
-  "flags": {
-    "Aatrox": {
-      "tier": "",
-      "difficulty": "",
-      "attempts": 0
-    },
-    "Ahri": {
-      "tier": "",
-      "difficulty": "",
-      "attempts": 0
-    },
-    "Akali": {
-      "tier": "",
-      "difficulty": "",
-      "attempts": 0
-    }
-  }
+  "flags": {}
 }
