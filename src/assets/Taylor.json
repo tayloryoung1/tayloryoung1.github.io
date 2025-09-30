@@ -81,7 +81,8 @@
       "tier": ""
     },
     "Aphelios": {
-      "attempts": 3
+      "attempts": 3,
+      "tier": "F"
     }
   }
 }
