@@ -5,10 +5,7 @@
     "Alistar",
     "Ambessa",
     "Ahri",
-    "Aatrox",
-    "Amumu",
-    "Anivia",
-    "Annie"
+    "Aatrox"
   ],
   "flags": {
     "Aatrox": {
@@ -42,43 +39,19 @@
       "attempts": 2
     },
     "Amumu": {
-      "tier": "B",
-      "difficulty": "Baby Mode",
-      "attempts": 2
+      "tier": "",
+      "difficulty": "",
+      "attempts": 0
     },
     "Anivia": {
-      "tier": "A",
-      "difficulty": "Medium",
-      "attempts": 1
+      "tier": "",
+      "difficulty": "",
+      "attempts": 0
     },
     "Annie": {
-      "tier": "B",
-      "difficulty": "Baby Mode",
-      "attempts": 1
-    },
-    "Braum": {
-      "tier": ""
-    },
-    "Briar": {
-      "tier": ""
-    },
-    "Gangplank": {
-      "tier": ""
-    },
-    "Ivern": {
-      "tier": ""
-    },
-    "Rakan": {
-      "tier": ""
-    },
-    "Shen": {
-      "tier": ""
-    },
-    "Singed": {
-      "tier": ""
-    },
-    "Sion": {
-      "tier": ""
+      "tier": "",
+      "difficulty": "",
+      "attempts": 0
     }
   }
 }
