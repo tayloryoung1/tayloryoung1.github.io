@@ -1,19 +1,4 @@
 {
-  "selected": [
-    "Illaoi",
-    "Zed"
-  ],
-  "flags": {
-    "Illaoi": {
-      "difficulty": "Easy",
-      "attempts": 1,
-      "tier": "A"
-    },
-    "Zed": {
-      "tier": "A"
-    },
-    "Vi": {
-      "tier": "S"
-    }
-  }
+  "selected": [],
+  "flags": {}
 }
