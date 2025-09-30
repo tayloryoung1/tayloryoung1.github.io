@@ -82,7 +82,8 @@
     },
     "Aphelios": {
       "attempts": 3,
-      "tier": "F"
+      "tier": "F",
+      "difficulty": "Very Complicated"
     }
   }
 }
