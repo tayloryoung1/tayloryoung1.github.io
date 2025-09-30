@@ -8,6 +8,9 @@
       "difficulty": "Easy",
       "attempts": 1,
       "tier": "A"
+    },
+    "Zed": {
+      "tier": ""
     }
   }
 }
