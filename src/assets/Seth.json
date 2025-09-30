@@ -1,4 +1,12 @@
 {
-  "selected": [],
-  "flags": {}
+  "selected": [
+    "Illaoi"
+  ],
+  "flags": {
+    "Illaoi": {
+      "difficulty": "Easy",
+      "attempts": 1,
+      "tier": "A"
+    }
+  }
 }
