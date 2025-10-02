@@ -1,30 +1,4 @@
 {
-  "selected": [
-    "Illaoi",
-    "Zed",
-    "Vi",
-    "Yasuo"
-  ],
-  "flags": {
-    "Illaoi": {
-      "difficulty": "Challenging",
-      "attempts": 1,
-      "tier": "A"
-    },
-    "Zed": {
-      "tier": "A",
-      "attempts": 1,
-      "difficulty": "Very Complicated"
-    },
-    "Vi": {
-      "tier": "S",
-      "attempts": 1,
-      "difficulty": "Easy"
-    },
-    "Yasuo": {
-      "tier": "F",
-      "attempts": 2,
-      "difficulty": "Medium"
-    }
-  }
+  "selected": [],
+  "flags": {}
 }
