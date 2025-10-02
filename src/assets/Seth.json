@@ -18,7 +18,8 @@
       "attempts": 1
     },
     "Yasuo": {
-      "tier": "F"
+      "tier": "F",
+      "attempts": 2
     }
   }
 }
