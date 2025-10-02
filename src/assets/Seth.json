@@ -13,7 +13,8 @@
       "tier": "A"
     },
     "Vi": {
-      "tier": "S"
+      "tier": "S",
+      "attempts": 1
     },
     "Yasuo": {
       "tier": "F"
