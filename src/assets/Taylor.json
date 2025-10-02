@@ -86,6 +86,9 @@
       "attempts": 4,
       "tier": "F",
       "difficulty": "Very Complicated"
+    },
+    "Ashe": {
+      "attempts": 1
     }
   }
 }
