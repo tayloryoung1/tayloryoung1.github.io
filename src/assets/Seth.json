@@ -16,7 +16,8 @@
     },
     "Vi": {
       "tier": "S",
-      "attempts": 1
+      "attempts": 1,
+      "difficulty": "Easy"
     },
     "Yasuo": {
       "tier": "F",
