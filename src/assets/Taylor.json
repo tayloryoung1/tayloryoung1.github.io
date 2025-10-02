@@ -89,7 +89,8 @@
     },
     "Ashe": {
       "attempts": 1,
-      "difficulty": "Easy"
+      "difficulty": "Easy",
+      "tier": "B"
     }
   }
 }
