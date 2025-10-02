@@ -10,7 +10,8 @@
       "tier": "A"
     },
     "Zed": {
-      "tier": "A"
+      "tier": "A",
+      "attempts": 1
     },
     "Vi": {
       "tier": "S",
