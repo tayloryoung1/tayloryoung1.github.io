@@ -91,6 +91,9 @@
       "attempts": 1,
       "difficulty": "Easy",
       "tier": "A"
+    },
+    "AurelionSol": {
+      "attempts": 2
     }
   }
 }
