@@ -88,7 +88,8 @@
       "difficulty": "Very Complicated"
     },
     "Ashe": {
-      "attempts": 1
+      "attempts": 1,
+      "difficulty": "Easy"
     }
   }
 }
