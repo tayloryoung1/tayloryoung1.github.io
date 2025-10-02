@@ -19,7 +19,8 @@
     },
     "Yasuo": {
       "tier": "F",
-      "attempts": 2
+      "attempts": 2,
+      "difficulty": "Medium"
     }
   }
 }
