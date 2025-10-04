@@ -101,7 +101,8 @@
     },
     "Aurora": {
       "attempts": 1,
-      "tier": "C"
+      "tier": "C",
+      "difficulty": "Easy"
     }
   }
 }
