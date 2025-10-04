@@ -106,7 +106,8 @@
     },
     "Azir": {
       "attempts": 1,
-      "difficulty": "Very Complicated"
+      "difficulty": "Very Complicated",
+      "tier": "F"
     }
   }
 }
