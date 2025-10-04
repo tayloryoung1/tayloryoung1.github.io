@@ -103,6 +103,9 @@
       "attempts": 1,
       "tier": "C",
       "difficulty": "Easy"
+    },
+    "Azir": {
+      "attempts": 1
     }
   }
 }
