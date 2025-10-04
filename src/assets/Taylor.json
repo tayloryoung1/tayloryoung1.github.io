@@ -100,7 +100,8 @@
       "tier": "A"
     },
     "Aurora": {
-      "attempts": 1
+      "attempts": 1,
+      "tier": "C"
     }
   }
 }
