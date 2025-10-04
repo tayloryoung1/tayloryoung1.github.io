@@ -95,7 +95,8 @@
     },
     "AurelionSol": {
       "attempts": 2,
-      "difficulty": "Challenging"
+      "difficulty": "Challenging",
+      "tier": "A"
     }
   }
 }
