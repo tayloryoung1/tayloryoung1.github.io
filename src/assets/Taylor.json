@@ -105,7 +105,8 @@
       "difficulty": "Easy"
     },
     "Azir": {
-      "attempts": 1
+      "attempts": 1,
+      "difficulty": "Very Complicated"
     }
   }
 }
