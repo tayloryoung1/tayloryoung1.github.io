@@ -28,7 +28,8 @@
     },
     "Zac": {
       "tier": "C",
-      "attempts": 3
+      "attempts": 3,
+      "difficulty": "Easy"
     }
   }
 }
