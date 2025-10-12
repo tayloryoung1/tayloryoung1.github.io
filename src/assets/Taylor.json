@@ -111,7 +111,8 @@
       "tier": "F"
     },
     "Bard": {
-      "tier": "B"
+      "tier": "B",
+      "difficulty": "Medium"
     }
   }
 }
