@@ -27,7 +27,8 @@
       "difficulty": "Medium"
     },
     "Zac": {
-      "tier": "C"
+      "tier": "C",
+      "attempts": 3
     }
   }
 }
