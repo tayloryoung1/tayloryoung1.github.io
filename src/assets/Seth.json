@@ -30,6 +30,9 @@
       "tier": "C",
       "attempts": 3,
       "difficulty": "Easy"
+    },
+    "MonkeyKing": {
+      "tier": "B"
     }
   }
 }
