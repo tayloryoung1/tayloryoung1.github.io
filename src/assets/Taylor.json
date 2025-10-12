@@ -5,7 +5,14 @@
     "Alistar",
     "Ambessa",
     "Ahri",
-    "Aatrox"
+    "Aatrox",
+    "Amumu",
+    "Anivia",
+    "Annie",
+    "Aphelios",
+    "Ashe",
+    "AurelionSol",
+    "Aurora"
   ],
   "flags": {
     "Aatrox": {
@@ -39,19 +46,68 @@
       "attempts": 2
     },
     "Amumu": {
-      "tier": "",
-      "difficulty": "",
-      "attempts": 0
+      "tier": "B",
+      "difficulty": "Baby Mode",
+      "attempts": 2
     },
     "Anivia": {
-      "tier": "",
-      "difficulty": "",
-      "attempts": 0
+      "tier": "A",
+      "difficulty": "Medium",
+      "attempts": 1
     },
     "Annie": {
-      "tier": "",
-      "difficulty": "",
-      "attempts": 0
+      "tier": "B",
+      "difficulty": "Baby Mode",
+      "attempts": 1
+    },
+    "Braum": {
+      "tier": ""
+    },
+    "Briar": {
+      "tier": ""
+    },
+    "Gangplank": {
+      "tier": ""
+    },
+    "Ivern": {
+      "tier": ""
+    },
+    "Rakan": {
+      "tier": ""
+    },
+    "Shen": {
+      "tier": ""
+    },
+    "Singed": {
+      "tier": ""
+    },
+    "Sion": {
+      "tier": ""
+    },
+    "Aphelios": {
+      "attempts": 4,
+      "tier": "F",
+      "difficulty": "Very Complicated"
+    },
+    "Ashe": {
+      "attempts": 1,
+      "difficulty": "Easy",
+      "tier": "A"
+    },
+    "AurelionSol": {
+      "attempts": 3,
+      "difficulty": "Challenging",
+      "tier": "A"
+    },
+    "Aurora": {
+      "attempts": 1,
+      "tier": "C",
+      "difficulty": "Easy"
+    },
+    "Azir": {
+      "attempts": 2,
+      "difficulty": "Very Complicated",
+      "tier": "F"
     }
   }
 }
