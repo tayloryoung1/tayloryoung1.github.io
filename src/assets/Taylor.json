@@ -112,7 +112,8 @@
     },
     "Bard": {
       "tier": "B",
-      "difficulty": "Challenging"
+      "difficulty": "Challenging",
+      "attempts": 1
     }
   }
 }
