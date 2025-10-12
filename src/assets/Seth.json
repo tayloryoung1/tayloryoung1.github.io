@@ -25,6 +25,9 @@
       "tier": "F",
       "attempts": 2,
       "difficulty": "Medium"
+    },
+    "Zac": {
+      "tier": "C"
     }
   }
 }
