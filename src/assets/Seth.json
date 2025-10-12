@@ -32,7 +32,8 @@
       "difficulty": "Easy"
     },
     "MonkeyKing": {
-      "tier": "B"
+      "tier": "B",
+      "difficulty": "Medium"
     }
   }
 }
