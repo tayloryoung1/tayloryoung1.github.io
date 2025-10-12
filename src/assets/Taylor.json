@@ -109,6 +109,9 @@
       "attempts": 2,
       "difficulty": "Very Complicated",
       "tier": "F"
+    },
+    "Bard": {
+      "tier": "B"
     }
   }
 }
