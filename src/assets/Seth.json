@@ -36,6 +36,9 @@
       "tier": "B",
       "difficulty": "Medium",
       "attempts": 1
+    },
+    "Neeko": {
+      "tier": "A"
     }
   }
 }
