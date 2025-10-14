@@ -124,7 +124,8 @@
     },
     "Blitzcrank": {
       "attempts": 1,
-      "difficulty": "Baby Mode"
+      "difficulty": "Baby Mode",
+      "tier": "F"
     }
   }
 }
