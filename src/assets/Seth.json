@@ -41,7 +41,8 @@
     },
     "Neeko": {
       "tier": "A",
-      "difficulty": "Medium"
+      "difficulty": "Medium",
+      "attempts": 2
     }
   }
 }
