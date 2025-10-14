@@ -121,6 +121,9 @@
       "attempts": 2,
       "difficulty": "Medium",
       "tier": "C"
+    },
+    "Blitzcrank": {
+      "attempts": 1
     }
   }
 }
