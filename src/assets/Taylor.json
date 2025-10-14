@@ -116,6 +116,9 @@
       "tier": "B",
       "difficulty": "Challenging",
       "attempts": 1
+    },
+    "Belveth": {
+      "attempts": 2
     }
   }
 }
