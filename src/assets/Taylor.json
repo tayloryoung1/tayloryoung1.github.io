@@ -118,7 +118,8 @@
       "attempts": 1
     },
     "Belveth": {
-      "attempts": 2
+      "attempts": 2,
+      "difficulty": "Medium"
     }
   }
 }
