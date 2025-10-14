@@ -119,7 +119,8 @@
     },
     "Belveth": {
       "attempts": 2,
-      "difficulty": "Medium"
+      "difficulty": "Medium",
+      "tier": "C"
     }
   }
 }
