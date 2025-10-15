@@ -57,7 +57,8 @@
       "attempts": 1
     },
     "Rammus": {
-      "tier": "S"
+      "tier": "S",
+      "attempts": 1
     }
   }
 }
