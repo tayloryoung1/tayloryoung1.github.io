@@ -60,6 +60,9 @@
       "tier": "A",
       "attempts": 1,
       "difficulty": "Easy"
+    },
+    "Alistar": {
+      "tier": "S"
     }
   }
 }
