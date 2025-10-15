@@ -46,7 +46,8 @@
       "attempts": 2
     },
     "Orianna": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Challenging"
     }
   }
 }
