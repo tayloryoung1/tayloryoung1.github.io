@@ -63,7 +63,8 @@
       "difficulty": "Easy"
     },
     "Alistar": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Easy"
     }
   }
 }
