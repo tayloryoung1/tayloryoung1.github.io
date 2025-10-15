@@ -131,7 +131,8 @@
     },
     "Brand": {
       "tier": "B",
-      "difficulty": "Easy"
+      "difficulty": "Easy",
+      "attempts": 1
     }
   }
 }
