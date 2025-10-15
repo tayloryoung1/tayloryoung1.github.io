@@ -74,7 +74,8 @@
     },
     "Briar": {
       "tier": "B",
-      "difficulty": "Medium"
+      "difficulty": "Medium",
+      "attempts": 1
     },
     "Gangplank": {
       "tier": ""
