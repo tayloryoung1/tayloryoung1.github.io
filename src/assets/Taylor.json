@@ -67,7 +67,8 @@
       "attempts": 1
     },
     "Braum": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Medium"
     },
     "Briar": {
       "tier": ""
