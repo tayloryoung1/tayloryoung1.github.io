@@ -130,7 +130,8 @@
       "tier": "D"
     },
     "Brand": {
-      "tier": "A"
+      "tier": "A",
+      "difficulty": "Easy"
     }
   }
 }
