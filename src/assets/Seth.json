@@ -49,6 +49,9 @@
       "tier": "S",
       "difficulty": "Challenging",
       "attempts": 2
+    },
+    "Nunu": {
+      "tier": "D"
     }
   }
 }
