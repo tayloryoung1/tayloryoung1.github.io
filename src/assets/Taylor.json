@@ -5,21 +5,7 @@
     "Alistar",
     "Ambessa",
     "Ahri",
-    "Aatrox",
-    "Amumu",
-    "Anivia",
-    "Annie",
-    "Aphelios",
-    "Ashe",
-    "AurelionSol",
-    "Aurora",
-    "Azir",
-    "Bard",
-    "Belveth",
-    "Blitzcrank",
-    "Brand",
-    "Braum",
-    "Briar"
+    "Aatrox"
   ],
   "flags": {
     "Aatrox": {
@@ -28,22 +14,22 @@
       "attempts": 3
     },
     "Ahri": {
-      "tier": "D",
+      "tier": "C",
       "difficulty": "Easy",
       "attempts": 1
     },
     "Akali": {
-      "tier": "B",
+      "tier": "S",
       "difficulty": "Very Complicated",
       "attempts": 1
     },
     "Akshan": {
-      "tier": "B",
+      "tier": "C",
       "difficulty": "Medium",
       "attempts": 1
     },
     "Alistar": {
-      "tier": "D",
+      "tier": "B",
       "difficulty": "Baby Mode",
       "attempts": 3
     },
@@ -53,92 +39,19 @@
       "attempts": 2
     },
     "Amumu": {
-      "tier": "C",
-      "difficulty": "Baby Mode",
-      "attempts": 2
+      "tier": "",
+      "difficulty": "",
+      "attempts": 0
     },
     "Anivia": {
-      "tier": "A",
-      "difficulty": "Medium",
-      "attempts": 1
+      "tier": "",
+      "difficulty": "",
+      "attempts": 0
     },
     "Annie": {
-      "tier": "C",
-      "difficulty": "Baby Mode",
-      "attempts": 1
-    },
-    "Braum": {
-      "tier": "A",
-      "difficulty": "Medium",
-      "attempts": 1
-    },
-    "Briar": {
-      "tier": "A",
-      "difficulty": "Medium",
-      "attempts": 1
-    },
-    "Gangplank": {
-      "tier": ""
-    },
-    "Ivern": {
-      "tier": ""
-    },
-    "Rakan": {
-      "tier": ""
-    },
-    "Shen": {
-      "tier": ""
-    },
-    "Singed": {
-      "tier": ""
-    },
-    "Sion": {
-      "tier": ""
-    },
-    "Aphelios": {
-      "attempts": 4,
-      "tier": "D",
-      "difficulty": "Very Complicated"
-    },
-    "Ashe": {
-      "attempts": 1,
-      "difficulty": "Easy",
-      "tier": "S"
-    },
-    "AurelionSol": {
-      "attempts": 3,
-      "difficulty": "Challenging",
-      "tier": "S"
-    },
-    "Aurora": {
-      "attempts": 1,
-      "tier": "C",
-      "difficulty": "Easy"
-    },
-    "Azir": {
-      "attempts": 2,
-      "difficulty": "Very Complicated",
-      "tier": "A"
-    },
-    "Bard": {
-      "tier": "S",
-      "difficulty": "Challenging",
-      "attempts": 1
-    },
-    "Belveth": {
-      "attempts": 2,
-      "difficulty": "Medium",
-      "tier": "C"
-    },
-    "Blitzcrank": {
-      "attempts": 2,
-      "difficulty": "Baby Mode",
-      "tier": "F"
-    },
-    "Brand": {
-      "tier": "B",
-      "difficulty": "Easy",
-      "attempts": 1
+      "tier": "",
+      "difficulty": "",
+      "attempts": 0
     }
   }
 }
