@@ -52,7 +52,8 @@
       "attempts": 2
     },
     "Nunu": {
-      "tier": "D"
+      "tier": "D",
+      "attempts": 1
     }
   }
 }
