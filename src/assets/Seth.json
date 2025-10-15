@@ -41,13 +41,14 @@
       "attempts": 1
     },
     "Neeko": {
-      "tier": "S",
+      "tier": "A",
       "difficulty": "Medium",
       "attempts": 2
     },
     "Orianna": {
       "tier": "S",
-      "difficulty": "Challenging"
+      "difficulty": "Challenging",
+      "attempts": 2
     }
   }
 }
