@@ -76,7 +76,8 @@
     },
     "Kalista": {
       "tier": "C",
-      "attempts": 4
+      "attempts": 4,
+      "difficulty": "Medium"
     }
   }
 }
