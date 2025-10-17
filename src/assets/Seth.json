@@ -69,7 +69,8 @@
     },
     "Camille": {
       "tier": "B",
-      "difficulty": "Medium"
+      "difficulty": "Medium",
+      "attempts": 2
     }
   }
 }
