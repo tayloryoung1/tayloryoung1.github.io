@@ -71,6 +71,9 @@
       "tier": "C",
       "difficulty": "Medium",
       "attempts": 2
+    },
+    "Kalista": {
+      "tier": "C"
     }
   }
 }
