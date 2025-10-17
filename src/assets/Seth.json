@@ -66,6 +66,9 @@
       "tier": "A",
       "difficulty": "Easy",
       "attempts": 1
+    },
+    "Camille": {
+      "tier": "B"
     }
   }
 }
