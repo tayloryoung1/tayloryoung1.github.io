@@ -100,7 +100,8 @@
     },
     "DrMundo": {
       "tier": "A",
-      "attempts": 1
+      "attempts": 1,
+      "difficulty": "Medium"
     }
   }
 }
