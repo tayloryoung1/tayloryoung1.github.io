@@ -87,7 +87,8 @@
       "attempts": 1
     },
     "Ambessa": {
-      "tier": "C"
+      "tier": "C",
+      "attempts": 1
     }
   }
 }
