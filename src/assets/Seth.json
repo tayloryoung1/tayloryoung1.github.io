@@ -81,7 +81,8 @@
       "difficulty": "Challenging"
     },
     "Shen": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Medium"
     }
   }
 }
