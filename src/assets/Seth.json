@@ -90,6 +90,9 @@
       "tier": "C",
       "attempts": 1,
       "difficulty": "Challenging"
+    },
+    "Aurora": {
+      "tier": "C"
     }
   }
 }
