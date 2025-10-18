@@ -78,6 +78,9 @@
       "tier": "D",
       "attempts": 4,
       "difficulty": "Challenging"
+    },
+    "Shen": {
+      "tier": "S"
     }
   }
 }
