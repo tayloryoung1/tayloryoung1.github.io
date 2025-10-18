@@ -97,6 +97,9 @@
       "tier": "C",
       "difficulty": "Challenging",
       "attempts": 1
+    },
+    "DrMundo": {
+      "tier": "S"
     }
   }
 }
