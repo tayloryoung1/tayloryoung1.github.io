@@ -99,7 +99,8 @@
       "attempts": 1
     },
     "DrMundo": {
-      "tier": "A"
+      "tier": "A",
+      "attempts": 1
     }
   }
 }
