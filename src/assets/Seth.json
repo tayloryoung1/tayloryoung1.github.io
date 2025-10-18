@@ -93,7 +93,8 @@
       "difficulty": "Challenging"
     },
     "Aurora": {
-      "tier": "C"
+      "tier": "C",
+      "difficulty": "Challenging"
     }
   }
 }
