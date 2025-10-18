@@ -84,6 +84,9 @@
       "tier": "S",
       "difficulty": "Medium",
       "attempts": 1
+    },
+    "Ambessa": {
+      "tier": "C"
     }
   }
 }
