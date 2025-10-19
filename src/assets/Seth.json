@@ -113,6 +113,9 @@
       "tier": "S",
       "attempts": 1,
       "difficulty": "Medium"
+    },
+    "Rakan": {
+      "tier": "A"
     }
   }
 }
