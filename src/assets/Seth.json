@@ -128,7 +128,8 @@
       "difficulty": "Challenging"
     },
     "Kassadin": {
-      "tier": "B"
+      "tier": "B",
+      "attempts": 1
     }
   }
 }
