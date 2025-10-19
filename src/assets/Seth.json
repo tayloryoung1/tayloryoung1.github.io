@@ -107,7 +107,8 @@
       "difficulty": "Medium"
     },
     "Urgot": {
-      "tier": "A"
+      "tier": "A",
+      "attempts": 1
     },
     "Kaisa": {
       "tier": "S",
