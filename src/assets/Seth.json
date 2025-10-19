@@ -122,7 +122,8 @@
       "attempts": 1
     },
     "Lillia": {
-      "tier": "D"
+      "tier": "D",
+      "attempts": 1
     }
   }
 }
