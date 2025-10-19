@@ -125,6 +125,9 @@
       "tier": "D",
       "attempts": 1,
       "difficulty": "Challenging"
+    },
+    "Kassadin": {
+      "tier": "B"
     }
   }
 }
