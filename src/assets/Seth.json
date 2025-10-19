@@ -115,7 +115,8 @@
       "difficulty": "Medium"
     },
     "Rakan": {
-      "tier": "A"
+      "tier": "A",
+      "difficulty": "Medium"
     }
   }
 }
