@@ -123,7 +123,8 @@
     },
     "Lillia": {
       "tier": "D",
-      "attempts": 1
+      "attempts": 1,
+      "difficulty": "Challenging"
     }
   }
 }
