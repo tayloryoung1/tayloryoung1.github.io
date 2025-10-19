@@ -119,6 +119,9 @@
       "tier": "A",
       "difficulty": "Medium",
       "attempts": 1
+    },
+    "Lillia": {
+      "tier": "D"
     }
   }
 }
