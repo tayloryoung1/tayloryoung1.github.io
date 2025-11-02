@@ -134,7 +134,8 @@
       "difficulty": "Very Complicated"
     },
     "Aatrox": {
-      "tier": "C"
+      "tier": "C",
+      "difficulty": "Challenging"
     }
   }
 }
