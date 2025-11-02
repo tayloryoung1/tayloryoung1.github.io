@@ -140,7 +140,8 @@
       "attempts": 1
     },
     "TwistedFate": {
-      "tier": "C"
+      "tier": "C",
+      "difficulty": "Challenging"
     }
   }
 }
