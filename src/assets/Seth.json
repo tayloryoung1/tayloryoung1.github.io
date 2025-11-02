@@ -131,6 +131,9 @@
       "tier": "B",
       "attempts": 1,
       "difficulty": "Very Complicated"
+    },
+    "Aatrox": {
+      "tier": "C"
     }
   }
 }
