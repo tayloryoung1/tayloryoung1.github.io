@@ -32,7 +32,8 @@
     "Malzahar",
     "Milio",
     "Morgana",
-    "Mordekaiser"
+    "Mordekaiser",
+    "Nami"
   ],
   "flags": {
     "Illaoi": {
@@ -186,6 +187,9 @@
     "Mordekaiser": {
       "tier": "B",
       "difficulty": "Medium"
+    },
+    "Nami": {
+      "tier": "S"
     }
   }
 }
