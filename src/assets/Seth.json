@@ -205,6 +205,9 @@
     "Swain": {
       "tier": "S",
       "difficulty": "Medium"
+    },
+    "Trundle": {
+      "tier": "S"
     }
   }
 }
