@@ -225,6 +225,9 @@
     "Vex": {
       "tier": "S",
       "difficulty": "Challenging"
+    },
+    "Vladimir": {
+      "difficulty": "Very Complicated"
     }
   }
 }
