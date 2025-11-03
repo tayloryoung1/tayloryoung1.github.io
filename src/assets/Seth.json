@@ -184,7 +184,8 @@
       "difficulty": "Medium"
     },
     "Mordekaiser": {
-      "tier": "B"
+      "tier": "B",
+      "difficulty": "Medium"
     }
   }
 }
