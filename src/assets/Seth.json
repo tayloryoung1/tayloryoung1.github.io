@@ -213,6 +213,9 @@
     "Trundle": {
       "tier": "S",
       "difficulty": "Medium"
+    },
+    "Veigar": {
+      "tier": "S"
     }
   }
 }
