@@ -28,7 +28,8 @@
     "Annie",
     "Blitzcrank",
     "Fizz",
-    "Kennen"
+    "Kennen",
+    "Malzahar"
   ],
   "flags": {
     "Illaoi": {
@@ -165,6 +166,9 @@
       "difficulty": "Challenging"
     },
     "Kennen": {
+      "tier": "A"
+    },
+    "Malzahar": {
       "tier": "A"
     }
   }
