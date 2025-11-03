@@ -27,7 +27,8 @@
     "Brand",
     "Annie",
     "Blitzcrank",
-    "Fizz"
+    "Fizz",
+    "Kennen"
   ],
   "flags": {
     "Illaoi": {
@@ -162,6 +163,9 @@
     "Fizz": {
       "tier": "A",
       "difficulty": "Challenging"
+    },
+    "Kennen": {
+      "tier": "A"
     }
   }
 }
