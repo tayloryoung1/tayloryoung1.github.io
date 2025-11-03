@@ -223,7 +223,8 @@
       "difficulty": "Very Complicated"
     },
     "Vex": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Challenging"
     }
   }
 }
