@@ -146,7 +146,8 @@
       "attempts": 2
     },
     "Annie": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Easy"
     }
   }
 }
