@@ -148,6 +148,9 @@
     "Annie": {
       "tier": "S",
       "difficulty": "Easy"
+    },
+    "Brand": {
+      "tier": "A"
     }
   }
 }
