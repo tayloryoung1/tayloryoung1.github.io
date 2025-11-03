@@ -202,7 +202,8 @@
       "difficulty": "Challenging"
     },
     "Swain": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Medium"
     }
   }
 }
