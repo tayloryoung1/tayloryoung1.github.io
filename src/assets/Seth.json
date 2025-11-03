@@ -235,6 +235,9 @@
     "Warwick": {
       "tier": "S",
       "difficulty": "Medium"
+    },
+    "Ziggs": {
+      "tier": "A"
     }
   }
 }
