@@ -227,7 +227,8 @@
       "difficulty": "Challenging"
     },
     "Vladimir": {
-      "difficulty": "Very Complicated"
+      "difficulty": "Very Complicated",
+      "tier": "A"
     }
   }
 }
