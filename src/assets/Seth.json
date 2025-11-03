@@ -181,6 +181,9 @@
     "Morgana": {
       "tier": "A",
       "difficulty": "Medium"
+    },
+    "Mordekaiser": {
+      "tier": "B"
     }
   }
 }
