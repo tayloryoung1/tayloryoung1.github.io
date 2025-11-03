@@ -207,7 +207,8 @@
       "difficulty": "Medium"
     },
     "Trundle": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Medium"
     }
   }
 }
