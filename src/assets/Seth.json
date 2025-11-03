@@ -170,7 +170,8 @@
       "tier": "A"
     },
     "Malzahar": {
-      "tier": "A"
+      "tier": "A",
+      "difficulty": "Medium"
     },
     "Milio": {
       "tier": "S"
