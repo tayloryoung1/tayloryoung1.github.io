@@ -144,6 +144,9 @@
       "tier": "C",
       "difficulty": "Challenging",
       "attempts": 2
+    },
+    "Annie": {
+      "tier": "S"
     }
   }
 }
