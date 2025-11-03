@@ -197,7 +197,8 @@
       "tier": "A"
     },
     "Smolder": {
-      "tier": "A"
+      "tier": "A",
+      "difficulty": "Challenging"
     }
   }
 }
