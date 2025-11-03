@@ -160,7 +160,8 @@
       "tier": "B"
     },
     "Fizz": {
-      "tier": "A"
+      "tier": "A",
+      "difficulty": "Challenging"
     }
   }
 }
