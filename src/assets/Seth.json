@@ -200,6 +200,9 @@
     "Smolder": {
       "tier": "A",
       "difficulty": "Challenging"
+    },
+    "Swain": {
+      "tier": "S"
     }
   }
 }
