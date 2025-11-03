@@ -232,7 +232,8 @@
       "tier": "A"
     },
     "Warwick": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Medium"
     }
   }
 }
