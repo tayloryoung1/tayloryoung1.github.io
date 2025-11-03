@@ -174,7 +174,8 @@
       "difficulty": "Medium"
     },
     "Milio": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Challenging"
     }
   }
 }
