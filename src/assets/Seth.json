@@ -153,6 +153,9 @@
     "Brand": {
       "tier": "A",
       "difficulty": "Medium"
+    },
+    "Blitzcrank": {
+      "tier": "B"
     }
   }
 }
