@@ -151,7 +151,8 @@
       "difficulty": "Easy"
     },
     "Brand": {
-      "tier": "A"
+      "tier": "A",
+      "difficulty": "Medium"
     }
   }
 }
