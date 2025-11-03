@@ -30,7 +30,8 @@
     "Fizz",
     "Kennen",
     "Malzahar",
-    "Milio"
+    "Milio",
+    "Morgana"
   ],
   "flags": {
     "Illaoi": {
@@ -176,6 +177,9 @@
     "Milio": {
       "tier": "S",
       "difficulty": "Challenging"
+    },
+    "Morgana": {
+      "tier": "A"
     }
   }
 }
