@@ -243,6 +243,9 @@
     "Olaf": {
       "tier": "B",
       "attempts": 2
+    },
+    "Kled": {
+      "tier": "S"
     }
   }
 }
