@@ -241,7 +241,8 @@
       "tier": "A"
     },
     "Olaf": {
-      "tier": "B"
+      "tier": "B",
+      "attempts": 2
     }
   }
 }
