@@ -252,7 +252,8 @@
       "difficulty": "Medium"
     },
     "Caitlyn": {
-      "tier": "S"
+      "tier": "S",
+      "difficulty": "Medium"
     }
   }
 }
