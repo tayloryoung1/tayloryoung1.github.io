@@ -253,7 +253,8 @@
     },
     "Caitlyn": {
       "tier": "S",
-      "difficulty": "Medium"
+      "difficulty": "Medium",
+      "attempts": 2
     }
   }
 }
