@@ -249,6 +249,9 @@
       "tier": "S",
       "attempts": 1,
       "difficulty": "Medium"
+    },
+    "Caitlyn": {
+      "tier": "S"
     }
   }
 }
