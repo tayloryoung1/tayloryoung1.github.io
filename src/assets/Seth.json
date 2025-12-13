@@ -256,6 +256,9 @@
       "tier": "S",
       "difficulty": "Medium",
       "attempts": 2
+    },
+    "Nilah": {
+      "tier": "A"
     }
   }
 }
