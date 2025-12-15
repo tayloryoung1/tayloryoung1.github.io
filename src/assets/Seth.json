@@ -265,7 +265,8 @@
     },
     "Rengar": {
       "tier": "F",
-      "difficulty": "Very Complicated"
+      "difficulty": "Very Complicated",
+      "attempts": 4
     }
   }
 }
