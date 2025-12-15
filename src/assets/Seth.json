@@ -270,7 +270,8 @@
       "attempts": 4
     },
     "Nocturne": {
-      "tier": "S"
+      "tier": "S",
+      "attempts": 1
     }
   }
 }
